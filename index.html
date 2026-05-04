@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Snake | Premium Arcade Experience</title>
+    <meta name="description" content="A high-performance, modern Snake game built with HTML5 Canvas and JavaScript.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <div id="hud" class="hud">
+            <div class="score-container">
+                <span class="label">SCORE</span>
+                <span id="score" class="value">000</span>
+            </div>
+            <div class="level-container">
+                <span class="label">LEVEL</span>
+                <span id="level" class="value">1</span>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Start Screen -->
+            <div id="startScreen" class="overlay active">
+                <div class="content">
+                    <h1>NEON<span>SNAKE</span></h1>
+                    <p>Master the grid. Consume the core. Grow eternal.</p>
+                    <div class="controls-hint">
+                        <div class="key-group">
+                            <div class="key">↑</div>
+                            <div class="key-row">
+                                <div class="key">←</div>
+                                <div class="key">↓</div>
+                                <div class="key">→</div>
+                            </div>
+                        </div>
+                        <span>Use Arrow Keys to Move</span>
+                    </div>
+                    <button id="startButton" class="btn-primary">INITIALIZE GAME</button>
+                </div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="gameOverScreen" class="overlay">
+                <div class="content">
+                    <h2 class="terminal-text">CONNECTION LOST</h2>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <button id="restartButton" class="btn-primary">REBOOT SYSTEM</button>
+                </div>
+            </div>
+
+            <!-- Pause Screen -->
+            <div id="pauseScreen" class="overlay">
+                <div class="content">
+                    <h2 class="terminal-text" style="color: var(--primary);">PAUSED</h2>
+                    <p>Press ESC to Resume</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="game-footer">
+            <p>AVOID WALLS & SELF-COLLISION • SPEED INCREASES EVERY 50 POINTS</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
